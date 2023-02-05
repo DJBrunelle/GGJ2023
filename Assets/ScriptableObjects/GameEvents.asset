@@ -15,18 +15,60 @@ MonoBehaviour:
   _gameEvents:
   - _eventText: Someone you care about sent you a message today!
     _StatModifiers:
-    - _statType: 0
-      _amount: 2
-    - _statType: 1
-      _amount: 1
+    - _resourceType: 0
+      _amount: 20
+    - _resourceType: 1
+      _amount: 10
   - _eventText: You liked the way you looked today :) Keep it up!
     _StatModifiers:
-    - _statType: 0
-      _amount: 1
-    - _statType: 1
-      _amount: 2
-  - _eventText: You feel like you made an introspective breakthrough on you you are
+    - _resourceType: 0
+      _amount: 10
+    - _resourceType: 1
+      _amount: 20
+  - _eventText: You feel like you made an introspective breakthrough on who you are
       as a person today
     _StatModifiers:
-    - _statType: 1
-      _amount: 3
+    - _resourceType: 1
+      _amount: 30
+  - _eventText: You feel super rested from a surprisingly good sleep! Go get em champ!
+    _StatModifiers:
+    - _resourceType: 0
+      _amount: 30
+  - _eventText: You slept poorly last night. Oof
+    _StatModifiers:
+    - _resourceType: 0
+      _amount: -30
+  - _eventText: It's a bad day for self-doubt :(
+    _StatModifiers:
+    - _resourceType: 1
+      _amount: -30
+    - _resourceType: 3
+      _amount: -10
+  - _eventText: You get sick! Notlikethis
+    _StatModifiers:
+    - _resourceType: 3
+      _amount: -10
+  - _eventText: Someone you care about got mad at you today. You think you messed
+      up
+    _StatModifiers:
+    - _resourceType: 3
+      _amount: -30
+    - _resourceType: 1
+      _amount: -10
+  - _eventText: A tragedy has happened to someone close to you. Life is tough sometimes
+      :(
+    _StatModifiers:
+    - _resourceType: 3
+      _amount: -20
+    - _resourceType: 1
+      _amount: -20
+    - _resourceType: 0
+      _amount: -20
+  - _eventText: Introspection turns into rumination
+    _StatModifiers:
+    - _resourceType: 3
+      _amount: -10
+    - _resourceType: 1
+      _amount: -10
+    - _resourceType: 0
+      _amount: -10

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,6 +22,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _startMaxEnergy = 100f;
     [SerializeField] private float _startMaxMotivation = 100f;
     [SerializeField] private float _startMaxTime = 100f;
+
+    [SerializeField] private TextMeshProUGUI _eventText;
 
     private EventSimulator _eventSimulator;
     private float _lastLevelUp;
@@ -102,8 +105,10 @@ public class WaveManager : MonoBehaviour
         if (_timeSinceEvent > _eventRate)
         {
             var gameEvent = _eventSimulator.TriggerEvent(_eventData);
-            
-            // TODO implement text output on UI on random event
+
+            _eventText.text = ">" + gameEvent._eventText + "\n";
+
+            _timeSinceEvent = 0;
         }
 
         _timeSinceThought += Time.deltaTime;
