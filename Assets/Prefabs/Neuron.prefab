@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1b00586b0234607e19e0692d62873aea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _neuron: {fileID: 20756720012755932}
   _branch: 1
+  _tendrils: {fileID: 0}
   spawnDistance: 3
   spawnAngle: 20
 --- !u!135 &1931102628505329811
