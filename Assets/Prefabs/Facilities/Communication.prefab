@@ -111,8 +111,8 @@ MonoBehaviour:
   physicalTimeCost: 25
   baseHealth: 3
   levelHealthMultiplier: 1
-  generates: 1
-  levelResourceGeneratesMultiplier: 1
+  generates: 3
+  levelResourceGeneratesMultiplier: 10
   myCollider: {fileID: 4608243415826909288}
 --- !u!135 &4608243415826909288
 SphereCollider:
