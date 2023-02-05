@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class EventSimulator : MonoBehaviour
+public class EventSimulator
 {
     [SerializeField] private EventData _eventData;
 
@@ -25,19 +25,19 @@ public class EventSimulator : MonoBehaviour
             switch (modifier._resourceType)
             {
                 case ResourceType.ENERGY:
-                    // TODO Modify energy
+                    Stats.energy += modifier._amount;
                     break;
             
                 case ResourceType.HAPPINESS:
-                    // TODO Modify Happiness
+                    Stats.happiness += modifier._amount;
                     break;
             
                 case ResourceType.MOTIVATION:
-                    // TODO Modify Motivation
+                    Stats.motivation += modifier._amount;
                     break;
                 
                 case ResourceType.TIME:
-                    // TODO Modify Time
+                    Stats.time += modifier._amount;
                     break;
             
             }
