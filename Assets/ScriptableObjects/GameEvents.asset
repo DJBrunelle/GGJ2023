@@ -19,35 +19,42 @@ MonoBehaviour:
       _amount: 20
     - _resourceType: 1
       _amount: 10
+    _icon: {fileID: 0}
   - _eventText: You liked the way you looked today :) Keep it up!
     _StatModifiers:
     - _resourceType: 0
       _amount: 10
     - _resourceType: 1
       _amount: 20
+    _icon: {fileID: 0}
   - _eventText: You feel like you made an introspective breakthrough on who you are
       as a person today
     _StatModifiers:
     - _resourceType: 1
       _amount: 30
+    _icon: {fileID: 0}
   - _eventText: You feel super rested from a surprisingly good sleep! Go get em champ!
     _StatModifiers:
     - _resourceType: 0
       _amount: 30
+    _icon: {fileID: 0}
   - _eventText: You slept poorly last night. Oof
     _StatModifiers:
     - _resourceType: 0
       _amount: -30
+    _icon: {fileID: 0}
   - _eventText: It's a bad day for self-doubt :(
     _StatModifiers:
     - _resourceType: 1
       _amount: -30
     - _resourceType: 3
       _amount: -10
+    _icon: {fileID: 0}
   - _eventText: You get sick! Notlikethis
     _StatModifiers:
     - _resourceType: 3
       _amount: -10
+    _icon: {fileID: 0}
   - _eventText: Someone you care about got mad at you today. You think you messed
       up
     _StatModifiers:
@@ -55,6 +62,7 @@ MonoBehaviour:
       _amount: -30
     - _resourceType: 1
       _amount: -10
+    _icon: {fileID: 0}
   - _eventText: A tragedy has happened to someone close to you. Life is tough sometimes
       :(
     _StatModifiers:
@@ -64,6 +72,7 @@ MonoBehaviour:
       _amount: -20
     - _resourceType: 0
       _amount: -20
+    _icon: {fileID: 0}
   - _eventText: Introspection turns into rumination
     _StatModifiers:
     - _resourceType: 3
@@ -72,3 +81,11 @@ MonoBehaviour:
       _amount: -10
     - _resourceType: 0
       _amount: -10
+    _icon: {fileID: 0}
+  - _eventText: You find a kimty to give lotsa pets <3 :3
+    _StatModifiers:
+    - _resourceType: 3
+      _amount: 30
+    - _resourceType: 1
+      _amount: 10
+    _icon: {fileID: 4350952785753996913, guid: 6d4a9cfe9759b8041bb7bc5fd813e98c, type: 3}

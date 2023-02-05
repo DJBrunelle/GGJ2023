@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public static class Stats
@@ -58,9 +59,11 @@ public static class Stats
 
     public static bool PurchaseFacility(float energy, float motivation, float time)
     {
+        TextMeshProUGUI globalText = GameObject.FindWithTag("GlobalText").GetComponent<TextMeshProUGUI>();
         if(energy > _energy)
         {
             Debug.Log("not enough energy");
+            globalText.text = "> not enough energy";
             Debug.Log("needed energy:" + energy);
             Debug.Log("available energy:" + _energy);
             return false;
@@ -68,11 +71,13 @@ public static class Stats
         if(motivation > _motivation)
         {
             Debug.Log("not enough motivation");
+            globalText.text = "> not enough motivation";
             return false;
         }
         if(time > _time)
         {
             Debug.Log("not enough time");
+            globalText.text = "> not enough time";
             return false;
         }
         _energy -= energy;

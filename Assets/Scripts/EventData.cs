@@ -21,5 +21,6 @@ public class GameEvent
     }
     public string _eventText;
     public List<StatModifier> _StatModifiers;
+    public GameObject _icon;
 }
 

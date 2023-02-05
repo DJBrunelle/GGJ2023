@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3103735689695732549
+--- !u!1 &4350952785753996913
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3103735689695732544}
-  - component: {fileID: 3103735689695732547}
-  - component: {fileID: 3103735689695732546}
-  - component: {fileID: 3453542311150606514}
+  - component: {fileID: 2640628275109404992}
+  - component: {fileID: 4678081463566873428}
   m_Layer: 0
-  m_Name: Eating
-  m_TagString: Facility
+  m_Name: Kimty
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3103735689695732544
+--- !u!4 &2640628275109404992
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3103735689695732549}
+  m_GameObject: {fileID: 4350952785753996913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -2.6456854, y: -4.4943953, z: -12.52906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3103735689695732547
+--- !u!212 &4678081463566873428
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3103735689695732549}
+  m_GameObject: {fileID: 4350952785753996913}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: c36c9629960cff501974d271fa615819, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 23ecf1b8503848a45b224b29609312b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,40 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3103735689695732546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3103735689695732549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc0d95c0e0788d39a76070a3f4eed66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayName: Gym
-  buildSoundName: sx_facility_cooking
-  personalEnergyCost: 20
-  personalMotivationCost: 20
-  personalTimeCost: 10
-  baseHealth: 4
-  levelHealthMultiplier: 1
-  generatesEnergy: 10
-  generatesMotivation: 5
-  generatesTime: 0
-  generatesHappiness: 20
-  myCollider: {fileID: 3453542311150606514}
---- !u!135 &3453542311150606514
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3103735689695732549}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 1.35
-  m_Center: {x: 0, y: 0, z: 0}

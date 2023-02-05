@@ -102,7 +102,7 @@ MonoBehaviour:
   buildSoundName: sx_facility_hygiene
   personalEnergyCost: 10
   personalMotivationCost: 10
-  personalTimeCost: 5
+  personalTimeCost: 2
   baseHealth: 3
   levelHealthMultiplier: 1
   generatesEnergy: 5

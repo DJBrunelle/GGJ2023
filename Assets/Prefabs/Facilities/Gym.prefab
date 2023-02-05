@@ -102,11 +102,11 @@ MonoBehaviour:
   buildSoundName: sx_facility_indoor
   personalEnergyCost: 10
   personalMotivationCost: 30
-  personalTimeCost: 10
+  personalTimeCost: 5
   baseHealth: 5
   levelHealthMultiplier: 1
-  generatesEnergy: 15
-  generatesMotivation: 10
+  generatesEnergy: 10
+  generatesMotivation: 5
   generatesTime: 0
   generatesHappiness: 15
   myCollider: {fileID: 503583302742556137}

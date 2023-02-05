@@ -102,7 +102,7 @@ MonoBehaviour:
   buildSoundName: sx_facility_hobby
   personalEnergyCost: 0
   personalMotivationCost: 0
-  personalTimeCost: 20
+  personalTimeCost: 15
   baseHealth: 2
   levelHealthMultiplier: 1
   generatesEnergy: 10
