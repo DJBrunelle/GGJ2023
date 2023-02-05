@@ -14,6 +14,7 @@ public class StatBar : MonoBehaviour
 
     public SFXManager sfxManager;
     public GameObject gameOverLoseMessage;
+    public GameObject gameOverWinMessage;
 
 
     // Start is called before the first frame update
@@ -57,6 +58,7 @@ public class StatBar : MonoBehaviour
                 {
                     //Win!
                     sfxManager.Play("AllSFX", "sx_neuron_unlocked");
+                    gameOverWinMessage.SetActive(true);
                     Time.timeScale = 0f;
                 }
                 break;
