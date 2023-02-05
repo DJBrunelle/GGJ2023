@@ -9,9 +9,7 @@ public class BuildManager : MonoBehaviour
     public List<GameObject> prefabs;
     public GameObject cancelBuildImage;
     public SFXManager sfxManager;
-    public Text energyCostText;
-    public Text motivationCostText;
-    public Text timeCostText;
+    public Canvas canvas;
 
     private Ray ray;
     private RaycastHit hit;
@@ -25,7 +23,10 @@ public class BuildManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Facility nf = prefabs[prefabIndex].GetComponent<Facility>();
+        canvas.SendMessage("SetEnergyCost", ("" + nf.personalEnergyCost));
+        canvas.SendMessage("SetMotivationCost", ("" + nf.personalMotivationCost));
+        canvas.SendMessage("SetTimeCost", ("" + nf.personalTimeCost));
     }
 
     // Update is called once per frame
@@ -79,9 +80,10 @@ public class BuildManager : MonoBehaviour
     {
         sfxManager.Play("AllSFX", "sx_ui_click");
         prefabIndex = selectionIndex;
-        energyCostText.text = "";
-        motivationCostText.text = "";
-        timeCostText.text = "";
+        Facility nf = prefabs[prefabIndex].GetComponent<Facility>();
+        canvas.SendMessage("SetEnergyCost", ("" + nf.personalEnergyCost));
+        canvas.SendMessage("SetMotivationCost", ("" + nf.personalMotivationCost));
+        canvas.SendMessage("SetTimeCost", ("" + nf.personalTimeCost));
     }
 
     public void StartBuild()
