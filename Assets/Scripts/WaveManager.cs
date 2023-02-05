@@ -1,19 +1,25 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour
 {
+    [Header("Scriptables")]
     [SerializeField] private InputReader _input;
+    [SerializeField] private EventData _eventData;
     
+    [Header("Prefabs")]
     [SerializeField] private List<Neuron> _neurons;
     [SerializeField] private BadThought _thought;
-
-    [SerializeField] private float _thoughtRate = 1;
+    
+    
+    [Header("Wave Variables")]
+    [FormerlySerializedAs("_thoughtRate")] [SerializeField] private float _thoughtInterval = 1;
     private float _timeSinceThought = 0;
 
-    [SerializeField] private float _eventRate = 10;
+    [FormerlySerializedAs("_eventRate")] [SerializeField] private float _eventInterval = 10;
     private float _timeSinceEvent;
 
     private EventSimulator _eventSimulator;
@@ -49,15 +55,15 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if (_timeSinceThought > _thoughtRate)
+        if (_timeSinceThought > _thoughtInterval)
         {
             SpawnThought();
             _timeSinceThought = 0;
         }
 
-        if (_timeSinceEvent > _eventRate)
+        if (_timeSinceEvent > _eventInterval)
         {
-            var gameEvent = _eventSimulator.TriggerEvent();
+            var gameEvent = _eventSimulator.TriggerEvent(_eventData);
             
             // TODO implement text output on UI on random event
         }

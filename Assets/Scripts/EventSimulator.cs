@@ -5,13 +5,11 @@ using UnityEngine.InputSystem;
 
 public class EventSimulator
 {
-    [SerializeField] private EventData _eventData;
-
-    public GameEvent TriggerEvent()
+    public GameEvent TriggerEvent(EventData eventData)
     {
-        int i = Random.Range(0, _eventData._gameEvents.Count);
+        int i = Random.Range(0, eventData._gameEvents.Count);
 
-        var gameEvent = _eventData._gameEvents[i];
+        var gameEvent = eventData._gameEvents[i];
         
         TriggerEventEffects(gameEvent);
 
