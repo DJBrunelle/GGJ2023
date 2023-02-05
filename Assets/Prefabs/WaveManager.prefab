@@ -51,5 +51,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _thought: {fileID: 9013076504956364015, guid: c9eabee3d555c6c478ad3e66b4a50675, type: 3}
-  _thoughtInterval: 5
-  _eventInterval: 10
+  _timeBetweenLevels: 3
+  _thoughtRate: 1
+  _eventRate: 10
+  _startMaxEnergy: 100
+  _startMaxMotivation: 100
+  _startMaxTime: 100
