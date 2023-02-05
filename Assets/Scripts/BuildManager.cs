@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class BuildManager : MonoBehaviour
 {
 
-    public Dropdown facilityDropdown;
-    public GameObject testPrefab;
+    public List<GameObject> prefabs;
     public GameObject cancelBuildImage;
 
     private Ray ray;
@@ -16,6 +15,7 @@ public class BuildManager : MonoBehaviour
     private GameObject newFacility;
     private Vector3 pos;
     private bool validSpot;
+    private int prefabIndex;
 
 
     // Start is called before the first frame update
@@ -63,6 +63,11 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    public void SelectFacility(int selectionIndex)
+    {
+        prefabIndex = selectionIndex;
+    }
+
     public void StartBuild()
     {
         Facility nf;
@@ -80,12 +85,12 @@ public class BuildManager : MonoBehaviour
             return;
         }
 
-        nf = testPrefab.GetComponent<Facility>();
+        nf = prefabs[prefabIndex].GetComponent<Facility>();
         if(Stats.PurchaseFacility(nf.personalEnergyCost, nf.personalMotivationCost, nf.personalTimeCost))
         {
             Debug.Log("Start Build");
             building = true;
-            newFacility = Instantiate(testPrefab);
+            newFacility = Instantiate(prefabs[prefabIndex]);
             cancelBuildImage.SetActive(true);
         }
     }

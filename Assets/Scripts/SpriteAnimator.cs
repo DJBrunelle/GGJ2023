@@ -47,6 +47,7 @@ public class SpriteAnimation
 
 public class SpriteAnimator : MonoBehaviour {
 
+    private int frameCount;
     public SpriteRenderer myRenderer;
     public Image myImage;
     public SpriteAtlas sheet;
@@ -99,7 +100,7 @@ public class SpriteAnimator : MonoBehaviour {
         }
 	}
 
-	void Update () 
+	void FixedUpdate () 
     {
         if(currAnim != null && !stopped)
         {
@@ -139,6 +140,11 @@ public class SpriteAnimator : MonoBehaviour {
                 {
                     mySprite = sheet.GetSprite(prefix + frames[index]);
                     AssignSpriteToRenderer();
+                    ////Debug.Log("Frame Length:" + (Time.time - prevFrame));
+                    //Debug.Log("Frame time:" + Time.time);
+                    frameCount++;
+                    if(frameCount % 160 == 0)
+                        Debug.Log("160 frames time:" + (Time.time / 9));
                     prevFrame = Time.time;
                 }
             }
