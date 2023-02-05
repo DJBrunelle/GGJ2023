@@ -12,6 +12,9 @@ public class StatBar : MonoBehaviour
     public Image bar;
     public TextMeshProUGUI statAmount;
 
+    public SFXManager sfxManager;
+    public GameObject gameOverLoseMessage;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,24 @@ public class StatBar : MonoBehaviour
             case ResourceType.TIME:
                 bar.fillAmount = Stats.time / Stats.maxTime;
                 statAmount.text = "" + Stats.time;
+                break;
+
+            case ResourceType.HAPPINESS:
+                bar.fillAmount = Stats.happiness / Stats.maxHappiness;
+                statAmount.text = "" + Stats.happiness;
+                if(Stats.happiness <= 0f)
+                {
+                    //Gameover!
+                    sfxManager.Play("AllSFX", "sx_gameOver");
+                    gameOverLoseMessage.SetActive(true);
+                    Time.timeScale = 0f;
+                }
+                else if(Stats.happiness >= 100f)
+                {
+                    //Win!
+                    sfxManager.Play("AllSFX", "sx_neuron_unlocked");
+                    Time.timeScale = 0f;
+                }
                 break;
             
             default:

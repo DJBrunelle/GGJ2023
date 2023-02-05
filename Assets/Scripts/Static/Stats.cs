@@ -7,6 +7,7 @@ public static class Stats
 {
 
     private static float _happiness = 50;
+    private static float _maxHappiness = 100;
     private static float _energy = 50;
     private static float _maxEnergy = 100;
     private static float _motivation = 50;
@@ -19,6 +20,12 @@ public static class Stats
     {
         get { return _happiness; }
         set { _happiness = value; }
+    }
+
+    public static float maxHappiness
+    {
+        get { return _maxHappiness; }
+        set { _maxHappiness = value; }
     }
 
     public static float energy
