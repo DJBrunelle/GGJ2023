@@ -1041,6 +1041,18 @@ PrefabInstance:
       value: Neuron
       objectReference: {fileID: 0}
     - target: {fileID: 6710030355688798098, guid: 7673e292b8b6992e0b690d8f5b8582de, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710030355688798098, guid: 7673e292b8b6992e0b690d8f5b8582de, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710030355688798098, guid: 7673e292b8b6992e0b690d8f5b8582de, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710030355688798098, guid: 7673e292b8b6992e0b690d8f5b8582de, type: 3}
       propertyPath: m_SortingLayer
       value: -2
       objectReference: {fileID: 0}

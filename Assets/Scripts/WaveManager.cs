@@ -43,6 +43,24 @@ public class WaveManager : MonoBehaviour
             neuron._first.gameObject.tag = "OuterNode";
             neuron._second.gameObject.tag = "OuterNode";
 
+            Color newColor = neuron.GetComponent<SpriteRenderer>().color;
+            newColor.r = 1f;
+            newColor.g = 1f;
+            newColor.b = 1f;
+            neuron.GetComponent<SpriteRenderer>().color = newColor;
+
+            newColor = neuron._first.GetComponent<SpriteRenderer>().color;
+            newColor.r = 0.5f;
+            newColor.g = 0.5f;
+            newColor.b = 0.5f;
+            neuron._first.GetComponent<SpriteRenderer>().color = newColor;
+            newColor = neuron._second.GetComponent<SpriteRenderer>().color;
+            newColor.r = 0.5f;
+            newColor.g = 0.5f;
+            newColor.b = 0.5f;
+            neuron._second.GetComponent<SpriteRenderer>().color = newColor;
+
+
             _newNeurons.Add(neuron._first);
             _newNeurons.Add(neuron._second);
             Camera.main.orthographicSize += 0.8f;
