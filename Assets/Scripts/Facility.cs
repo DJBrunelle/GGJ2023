@@ -8,22 +8,31 @@ public class Facility : MonoBehaviour
 
     public string displayName;
     public string buildSoundName;
-    public float interpersonalEnergyCost;
-    public float interpersonalMotivationCost;
-    public float interpersonalTimeCost;
+    // public float interpersonalEnergyCost;
+    // public float interpersonalMotivationCost;
+    // public float interpersonalTimeCost;
+    [Header("Costs")]
     public float personalEnergyCost;
     public float personalMotivationCost;
     public float personalTimeCost;
-    public float physicalEnergyCost;
-    public float physicalMotivationCost;
-    public float physicalTimeCost;
+    // public float physicalEnergyCost;
+    // public float physicalMotivationCost;
+    // public float physicalTimeCost;
 
+    [Header("Health")]
     public float baseHealth;
     public float levelHealthMultiplier;
 
-    public ResourceType generates;
-    public float levelResourceGeneratesMultiplier = 1;
+    // public ResourceType generates;
+    // public float levelResourceGeneratesMultiplier = 1;
+    
+    [Header("Resources Generated")]
+    public float generatesEnergy = 0;
+    public float generatesMotivation = 0;
+    public float generatesTime = 0;
+    public float generatesHappiness = 0;
 
+    [Header("Other")]
     public Collider myCollider;
 
     private float currentHealth;
@@ -39,21 +48,10 @@ public class Facility : MonoBehaviour
 
     public void GenerateResource()
     {
-        switch (generates)
-        {
-            case ResourceType.ENERGY:
-                Stats.energy += levelResourceGeneratesMultiplier;
-                break;
-            case ResourceType.HAPPINESS:
-                Stats.happiness += levelResourceGeneratesMultiplier;
-                break;
-            case ResourceType.MOTIVATION:
-                Stats.motivation += levelResourceGeneratesMultiplier;
-                break;
-            case ResourceType.TIME:
-                Stats.time += levelResourceGeneratesMultiplier;
-                break;
-        }
+        Stats.energy += generatesEnergy;
+        Stats.happiness += generatesHappiness;
+        Stats.motivation += generatesMotivation;
+        Stats.time += generatesTime;
     }
 
     public void Build(PathType pathType, int _levelNumber)

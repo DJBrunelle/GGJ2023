@@ -38,6 +38,8 @@ public class WaveManager : MonoBehaviour
 
     private void LevelUp()
     {
+        _thoughtRate -= 2;
+        Stats.time = 100;
         List<Neuron> _newNeurons = new List<Neuron>();
         foreach (var neuron in _neurons)
         {

@@ -100,19 +100,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Gym
   buildSoundName: sx_facility_cooking
-  interpersonalEnergyCost: 25
-  interpersonalMotivationCost: 0
+  interpersonalEnergyCost: 20
+  interpersonalMotivationCost: 10
   interpersonalTimeCost: 25
-  personalEnergyCost: 25
-  personalMotivationCost: 25
-  personalTimeCost: 0
+  personalEnergyCost: 20
+  personalMotivationCost: 10
+  personalTimeCost: 15
   physicalEnergyCost: 25
   physicalMotivationCost: 0
   physicalTimeCost: 25
-  baseHealth: 3
+  baseHealth: 5
   levelHealthMultiplier: 1
   generates: 0
-  levelResourceGeneratesMultiplier: 10
+  levelResourceGeneratesMultiplier: 20
   myCollider: {fileID: 3453542311150606514}
 --- !u!135 &3453542311150606514
 SphereCollider:
