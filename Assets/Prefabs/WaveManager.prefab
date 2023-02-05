@@ -45,9 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: 11400000, guid: af281acb452d0d746b09c066ec9448fe, type: 2}
+  _eventData: {fileID: 11400000, guid: 779d48fd198f07c46b8373b8556ad71a, type: 2}
   _neurons:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   _thought: {fileID: 9013076504956364015, guid: c9eabee3d555c6c478ad3e66b4a50675, type: 3}
-  _thoughtRate: 5
+  _thoughtInterval: 5
+  _eventInterval: 10
