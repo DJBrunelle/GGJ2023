@@ -100,19 +100,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Communication
   buildSoundName: sx_facility_communication
-  interpersonalEnergyCost: 30
-  interpersonalMotivationCost: 0
-  interpersonalTimeCost: 25
   personalEnergyCost: 30
-  personalMotivationCost: 0
+  personalMotivationCost: 10
   personalTimeCost: 15
-  physicalEnergyCost: 25
-  physicalMotivationCost: 0
-  physicalTimeCost: 25
-  baseHealth: 2
+  baseHealth: 3
   levelHealthMultiplier: 1
-  generates: 3
-  levelResourceGeneratesMultiplier: 20
+  generatesEnergy: 10
+  generatesMotivation: 30
+  generatesTime: 0
+  generatesHappiness: 20
   myCollider: {fileID: 4608243415826909288}
 --- !u!135 &4608243415826909288
 SphereCollider:
