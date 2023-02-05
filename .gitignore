@@ -51,6 +51,7 @@ ExportedObj/
 *.VC.db
 *.cs.swp
 *.cs.un~
+Assets/TextMesh Pro/
 
 # Unity3D generated meta files
 *.pidb.meta
