@@ -108,7 +108,7 @@ MonoBehaviour:
   generatesEnergy: 10
   generatesMotivation: 10
   generatesTime: 0
-  generatesHappiness: 10
+  generatesHappiness: 5
   myCollider: {fileID: 384601066219058727}
 --- !u!135 &384601066219058727
 SphereCollider:
