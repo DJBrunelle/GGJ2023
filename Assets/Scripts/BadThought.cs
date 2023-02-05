@@ -10,10 +10,15 @@ public class BadThought : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _heart;
 
+    private SFXManager sfxManager;
+
+
     public void OnSpawn(Neuron spawn)
     {
         if (spawn._layer == 0) return;
         _target = spawn._previous;
+        sfxManager = GameObject.FindWithTag("SFXManager").GetComponent<SFXManager>();
+        sfxManager.Play("AllSFX", "sx_badthought_spawn");
     }
 
     private bool AtTarget(Transform target)
@@ -46,14 +51,17 @@ public class BadThought : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
+        sfxManager = GameObject.FindWithTag("SFXManager").GetComponent<SFXManager>();
         if (col.CompareTag("Facility"))
         {
+            sfxManager.Play("AllSFX", "sx_badthought_defeated");
             col.GetComponent<Facility>().Damage(1);
             Destroy(gameObject);
         }
 
         if (col.CompareTag("Heart"))
         {
+            sfxManager.Play("AllSFX", "sx_damageTaken");
             Stats.happiness -= 10;
             Destroy(gameObject);
         }

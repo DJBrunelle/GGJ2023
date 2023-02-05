@@ -28,6 +28,13 @@ public class Facility : MonoBehaviour
 
     private float currentHealth;
     private int levelNumber;
+    private SFXManager sfxManager;
+
+
+    void Start()
+    {
+        sfxManager = GameObject.FindWithTag("SFXManager").GetComponent<SFXManager>();
+    }
 
 
     public void GenerateResource()
@@ -91,7 +98,7 @@ public class Facility : MonoBehaviour
     {
         //Placeholder function for when we need to do stuff. e.g. play sound, play animation, etc.
         
+        sfxManager.Play("AllSFX", "sx_facility_destroyed");
         Destroy(gameObject);
-        Debug.Log("Kablooie!");
     }
 }
