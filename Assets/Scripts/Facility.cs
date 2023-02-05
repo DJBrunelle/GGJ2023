@@ -49,9 +49,25 @@ public class Facility : MonoBehaviour
     public void GenerateResource()
     {
         Stats.energy += generatesEnergy;
+        if (Stats.energy > 100)
+        {
+            Stats.energy = 100;
+        }
         Stats.happiness += generatesHappiness;
+        if (Stats.happiness > 100)
+        {
+            Stats.happiness = 100;
+        }
         Stats.motivation += generatesMotivation;
+        if (Stats.motivation > 100)
+        {
+            Stats.motivation = 100;
+        }
         Stats.time += generatesTime;
+        if (Stats.time > 100)
+        {
+            Stats.time = 100;
+        }
     }
 
     public void Build(PathType pathType, int _levelNumber)
