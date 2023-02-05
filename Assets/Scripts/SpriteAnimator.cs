@@ -137,9 +137,7 @@ public class SpriteAnimator : MonoBehaviour {
                 }
                 if(!stopped)
                 {
-                    Debug.Log("setting sprite");
                     mySprite = sheet.GetSprite(prefix + frames[index]);
-                    Debug.Log(prefix + frames[index]);
                     AssignSpriteToRenderer();
                     prevFrame = Time.time;
                 }

@@ -5,6 +5,10 @@ using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour
 {
+    [SerializeField] private float startMaxEnergy;
+    [SerializeField] private float startMaxMotivation;
+    [SerializeField] private float startMaxTime;
+
     [SerializeField] private InputReader _input;
     
     [SerializeField] private List<Neuron> _neurons;
@@ -45,6 +49,12 @@ public class WaveManager : MonoBehaviour
         _input.ClickEvent += HandleClick;
 
         _eventSimulator = new EventSimulator();
+        Stats.maxEnergy = startMaxEnergy;
+        Stats.maxMotivation = startMaxMotivation;
+        Stats.maxTime = startMaxTime;
+        Stats.energy = 0.5f * startMaxEnergy;
+        Stats.motivation = 0.5f * startMaxMotivation;
+        Stats.time = 0.5f * startMaxTime;
     }
 
     private void Update()
@@ -68,7 +78,7 @@ public class WaveManager : MonoBehaviour
 
     private void HandleClick()
     {
-        LevelUp();
-        SpawnThought();
+        //LevelUp();
+        //SpawnThought();
     }
 }
