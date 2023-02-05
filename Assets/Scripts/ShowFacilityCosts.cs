@@ -11,18 +11,42 @@ public class ShowFacilityCosts : MonoBehaviour
     public TextMeshProUGUI timeCostText;
 
 
-    void SetEnergyCost(string cost)
+    void SetEnergyCost(float cost)
     {
-        energyCostText.text = cost;
+        energyCostText.text = "" + cost;
+        if(cost > Stats.energy)
+        {
+            energyCostText.color = Color.red;
+        }
+        else
+        {
+            energyCostText.color = Color.white;
+        }
     }
 
-    void SetMotivationCost(string cost)
+    void SetMotivationCost(float cost)
     {
-        motivationCostText.text = cost;
+        motivationCostText.text = "" + cost;
+        if(cost > Stats.motivation)
+        {
+            motivationCostText.color = Color.red;
+        }
+        else
+        {
+            motivationCostText.color = Color.white;
+        }
     }
 
-    void SetTimeCost(string cost)
+    void SetTimeCost(float cost)
     {
-        timeCostText.text = cost;
+        timeCostText.text = "" + cost;
+        if(cost > Stats.time)
+        {
+            timeCostText.color = Color.red;
+        }
+        else
+        {
+            timeCostText.color = Color.white;
+        }
     }
 }

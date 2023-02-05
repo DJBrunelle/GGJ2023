@@ -24,9 +24,9 @@ public class BuildManager : MonoBehaviour
     void Start()
     {
         Facility nf = prefabs[prefabIndex].GetComponent<Facility>();
-        canvas.SendMessage("SetEnergyCost", ("" + nf.personalEnergyCost));
-        canvas.SendMessage("SetMotivationCost", ("" + nf.personalMotivationCost));
-        canvas.SendMessage("SetTimeCost", ("" + nf.personalTimeCost));
+        canvas.SendMessage("SetEnergyCost", nf.personalEnergyCost, SendMessageOptions.DontRequireReceiver);
+        canvas.SendMessage("SetMotivationCost", nf.personalMotivationCost, SendMessageOptions.DontRequireReceiver);
+        canvas.SendMessage("SetTimeCost", nf.personalTimeCost, SendMessageOptions.DontRequireReceiver);
     }
 
     // Update is called once per frame
@@ -73,6 +73,10 @@ public class BuildManager : MonoBehaviour
             building = false;
             validSpot = false;
             cancelBuildImage.SetActive(false);
+            Facility nf = prefabs[prefabIndex].GetComponent<Facility>();
+            canvas.SendMessage("SetEnergyCost", nf.personalEnergyCost);
+            canvas.SendMessage("SetMotivationCost", nf.personalMotivationCost);
+            canvas.SendMessage("SetTimeCost", nf.personalTimeCost);
         }
     }
 
@@ -81,9 +85,9 @@ public class BuildManager : MonoBehaviour
         sfxManager.Play("AllSFX", "sx_ui_click");
         prefabIndex = selectionIndex;
         Facility nf = prefabs[prefabIndex].GetComponent<Facility>();
-        canvas.SendMessage("SetEnergyCost", ("" + nf.personalEnergyCost));
-        canvas.SendMessage("SetMotivationCost", ("" + nf.personalMotivationCost));
-        canvas.SendMessage("SetTimeCost", ("" + nf.personalTimeCost));
+        canvas.SendMessage("SetEnergyCost", nf.personalEnergyCost);
+        canvas.SendMessage("SetMotivationCost", nf.personalMotivationCost);
+        canvas.SendMessage("SetTimeCost", nf.personalTimeCost);
     }
 
     public void StartBuild()
