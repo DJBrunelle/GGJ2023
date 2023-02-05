@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,6 +41,21 @@ public class BadThought : MonoBehaviour
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, _speed * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Facility"))
+        {
+            col.GetComponent<Facility>().Damage(1);
+            Destroy(gameObject);
+        }
+
+        if (col.CompareTag("Heart"))
+        {
+            Stats.happiness -= 10;
+            Destroy(gameObject);
         }
     }
 }

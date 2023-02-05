@@ -32,7 +32,7 @@ public class BuildManager : MonoBehaviour
             return;
         }
         pos = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
-        pos.z = -5f;
+        pos.z = 5f;
         if(newFacility is not null)
         {
             newFacility.transform.position = pos;
@@ -45,7 +45,7 @@ public class BuildManager : MonoBehaviour
             {
                 //Input.mousePosition = Camera.main.WorldToScreenPoint(hit.collider.transform.position);
                 pos = hit.collider.transform.position;
-                pos.z = -5f;
+                pos.z = 5f;
                 newFacility.transform.position = pos;
                 validSpot = true;
             }
@@ -54,7 +54,7 @@ public class BuildManager : MonoBehaviour
         {
             Debug.Log("BUILD IT" + hit);
             pos = hit.collider.transform.position;
-            pos.z = -5f;
+            pos.z = 0;
             newFacility.transform.position = pos;
             newFacility.GetComponent<Facility>().Build(PathType.PERSONAL, 1);
             building = false;

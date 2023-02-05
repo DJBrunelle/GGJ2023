@@ -74,6 +74,8 @@ public class Facility : MonoBehaviour
     public void Die()
     {
         //Placeholder function for when we need to do stuff. e.g. play sound, play animation, etc.
+        
+        Destroy(gameObject);
         Debug.Log("Kablooie!");
     }
 }
