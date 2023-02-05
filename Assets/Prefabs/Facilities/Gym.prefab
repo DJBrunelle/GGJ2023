@@ -100,19 +100,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Gym
   buildSoundName: sx_facility_indoor
-  interpersonalEnergyCost: 30
-  interpersonalMotivationCost: 0
-  interpersonalTimeCost: 25
   personalEnergyCost: 10
   personalMotivationCost: 30
   personalTimeCost: 10
-  physicalEnergyCost: 25
-  physicalMotivationCost: 0
-  physicalTimeCost: 25
   baseHealth: 5
   levelHealthMultiplier: 1
-  generates: 0
-  levelResourceGeneratesMultiplier: 20
+  generatesEnergy: 15
+  generatesMotivation: 10
+  generatesTime: 0
+  generatesHappiness: 15
   myCollider: {fileID: 503583302742556137}
 --- !u!135 &503583302742556137
 SphereCollider:
