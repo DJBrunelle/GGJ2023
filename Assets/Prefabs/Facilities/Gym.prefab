@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 503583302742556137}
   m_Layer: 0
   m_Name: Gym
-  m_TagString: Untagged
+  m_TagString: Facility
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

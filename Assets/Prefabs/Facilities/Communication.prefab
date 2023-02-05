@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4608243415826909288}
   m_Layer: 0
   m_Name: Communication
-  m_TagString: Untagged
+  m_TagString: Facility
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
