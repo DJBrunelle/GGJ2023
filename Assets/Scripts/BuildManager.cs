@@ -9,6 +9,9 @@ public class BuildManager : MonoBehaviour
     public List<GameObject> prefabs;
     public GameObject cancelBuildImage;
     public SFXManager sfxManager;
+    public Text energyCostText;
+    public Text motivationCostText;
+    public Text timeCostText;
 
     private Ray ray;
     private RaycastHit hit;
@@ -76,6 +79,9 @@ public class BuildManager : MonoBehaviour
     {
         sfxManager.Play("AllSFX", "sx_ui_click");
         prefabIndex = selectionIndex;
+        energyCostText.text = "";
+        motivationCostText.text = "";
+        timeCostText.text = "";
     }
 
     public void StartBuild()
