@@ -8,6 +8,7 @@ public class BuildManager : MonoBehaviour
 
     public List<GameObject> prefabs;
     public GameObject cancelBuildImage;
+    public SFXManager sfxManager;
 
     private Ray ray;
     private RaycastHit hit;
@@ -31,12 +32,6 @@ public class BuildManager : MonoBehaviour
         {
             return;
         }
-        pos = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
-        pos.z = 5f;
-        if(newFacility is not null)
-        {
-            newFacility.transform.position = pos;
-        }
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         validSpot = false;
         if(Physics.Raycast(ray, out hit))
@@ -46,8 +41,21 @@ public class BuildManager : MonoBehaviour
                 //Input.mousePosition = Camera.main.WorldToScreenPoint(hit.collider.transform.position);
                 pos = hit.collider.transform.position;
                 pos.z = 5f;
+                if(newFacility.transform.position != pos)
+                {
+                    sfxManager.Play("AllSFX", "sx_ui_hover");
+                }
                 newFacility.transform.position = pos;
                 validSpot = true;
+            }
+            else
+            {
+                pos = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
+                pos.z = 5f;
+                if(newFacility is not null)
+                {
+                    newFacility.transform.position = pos;
+                }
             }
         }
         if(validSpot && Input.GetMouseButtonDown(0))
@@ -57,6 +65,7 @@ public class BuildManager : MonoBehaviour
             pos.z = 0;
             newFacility.transform.position = pos;
             newFacility.GetComponent<Facility>().Build(PathType.PERSONAL, 1);
+            sfxManager.Play("AllSFX", newFacility.GetComponent<Facility>().buildSoundName);
             building = false;
             validSpot = false;
             cancelBuildImage.SetActive(false);
@@ -65,11 +74,13 @@ public class BuildManager : MonoBehaviour
 
     public void SelectFacility(int selectionIndex)
     {
+        sfxManager.Play("AllSFX", "sx_ui_click");
         prefabIndex = selectionIndex;
     }
 
     public void StartBuild()
     {
+        sfxManager.Play("AllSFX", "sx_ui_click");
         Facility nf;
         if(building)
         {

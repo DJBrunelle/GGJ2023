@@ -7,6 +7,7 @@ public class Facility : MonoBehaviour
 {
 
     public string displayName;
+    public string buildSoundName;
     public float interpersonalEnergyCost;
     public float interpersonalMotivationCost;
     public float interpersonalTimeCost;

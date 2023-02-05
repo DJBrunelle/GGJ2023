@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Communication
+  buildSoundName: sx_facility_communication
   interpersonalEnergyCost: 25
   interpersonalMotivationCost: 0
   interpersonalTimeCost: 25

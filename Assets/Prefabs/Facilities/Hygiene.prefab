@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Gym
+  buildSoundName: sx_facility_hygiene
   interpersonalEnergyCost: 25
   interpersonalMotivationCost: 0
   interpersonalTimeCost: 25
