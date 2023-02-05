@@ -13,6 +13,11 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _thoughtRate = 1;
     private float _timeSinceThought = 0;
 
+    [SerializeField] private float _eventRate = 10;
+    private float _timeSinceEvent;
+
+    private EventSimulator _eventSimulator;
+
     private void SpawnThought()
     {
         var i = Random.Range(0, _neurons.Count - 1);
@@ -38,6 +43,8 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         _input.ClickEvent += HandleClick;
+
+        _eventSimulator = new EventSimulator();
     }
 
     private void Update()
@@ -48,7 +55,15 @@ public class WaveManager : MonoBehaviour
             _timeSinceThought = 0;
         }
 
+        if (_timeSinceEvent > _eventRate)
+        {
+            var gameEvent = _eventSimulator.TriggerEvent();
+            
+            // TODO implement text output on UI on random event
+        }
+
         _timeSinceThought += Time.deltaTime;
+        _timeSinceEvent += Time.deltaTime;
     }
 
     private void HandleClick()
