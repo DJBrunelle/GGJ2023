@@ -81,7 +81,7 @@ public class WaveManager : MonoBehaviour
 
     private void HandleClick()
     {
-//        LevelUp();
-//        SpawnThought();
+        LevelUp();
+        SpawnThought();
     }
 }
