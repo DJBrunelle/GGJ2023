@@ -22,18 +22,22 @@ public class EventSimulator : MonoBehaviour
     {
         foreach (var modifier in gameEvent._StatModifiers)  
         {
-            switch (modifier._statType)
+            switch (modifier._resourceType)
             {
-                case StatType.Energy:
+                case ResourceType.ENERGY:
                     // TODO Modify energy
                     break;
             
-                case StatType.Happiness:
+                case ResourceType.HAPPINESS:
                     // TODO Modify Happiness
                     break;
             
-                case StatType.Motivation:
+                case ResourceType.MOTIVATION:
                     // TODO Modify Motivation
+                    break;
+                
+                case ResourceType.TIME:
+                    // TODO Modify Time
                     break;
             
             }

@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 public class Neuron : MonoBehaviour
 {
     [FormerlySerializedAs("neuron")] [SerializeField] private GameObject _neuron;
-    [SerializeField] private Branch _branch;
+    [SerializeField] private PathType _branch;
 
     public Neuron _first { get; private set; }
     public Neuron _second { get; private set; }
@@ -52,11 +52,4 @@ public class Neuron : MonoBehaviour
         _second.OnSpawn(this);
         
     }
-}
-
-public enum Branch
-{
-    Interpersonal,
-    Intrapersonal,
-    Physical
 }

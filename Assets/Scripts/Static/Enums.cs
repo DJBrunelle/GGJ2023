@@ -9,5 +9,6 @@ public enum ResourceType
 {
     ENERGY = 0,
     MOTIVATION = 1,
-    TIME = 2
+    TIME = 2,
+    HAPPINESS = 3
 }

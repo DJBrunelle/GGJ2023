@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "Game Events")]
 public class EventData : ScriptableObject
@@ -15,16 +16,10 @@ public class GameEvent
     [Serializable]
     public class StatModifier
     {
-        public StatType _statType;
+        [FormerlySerializedAs("_statType")] public ResourceType _resourceType;
         public float _amount;
     }
     public string _eventText;
     public List<StatModifier> _StatModifiers;
 }
 
-public enum StatType
-{
-    Happiness,
-    Motivation,
-    Energy,
-}
