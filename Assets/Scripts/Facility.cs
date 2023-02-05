@@ -32,7 +32,21 @@ public class Facility : MonoBehaviour
 
     public void GenerateResource()
     {
-
+        switch (generates)
+        {
+            case ResourceType.ENERGY:
+                Stats.energy += levelResourceGeneratesMultiplier;
+                break;
+            case ResourceType.HAPPINESS:
+                Stats.happiness += levelResourceGeneratesMultiplier;
+                break;
+            case ResourceType.MOTIVATION:
+                Stats.motivation += levelResourceGeneratesMultiplier;
+                break;
+            case ResourceType.TIME:
+                Stats.time += levelResourceGeneratesMultiplier;
+                break;
+        }
     }
 
     public void Build(PathType pathType, int _levelNumber)
@@ -65,6 +79,7 @@ public class Facility : MonoBehaviour
 
     public void Damage(float damage)
     {
+        GenerateResource();
         currentHealth -= damage;
         if(currentHealth <= 0)
         {

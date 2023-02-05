@@ -111,7 +111,7 @@ MonoBehaviour:
   baseHealth: 3
   levelHealthMultiplier: 1
   generates: 0
-  levelResourceGeneratesMultiplier: 1
+  levelResourceGeneratesMultiplier: 10
   myCollider: {fileID: 3818223741779508052}
 --- !u!135 &3818223741779508052
 SphereCollider:
