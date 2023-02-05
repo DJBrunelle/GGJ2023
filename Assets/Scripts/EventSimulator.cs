@@ -39,6 +39,11 @@ public class EventSimulator
                     break;
             
             }
+
+            if (modifier._amount < 0)
+            {
+                modifier._amount = 0;
+            }
         }
     }
 }
