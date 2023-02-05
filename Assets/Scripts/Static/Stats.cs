@@ -5,13 +5,13 @@ using UnityEngine;
 public static class Stats
 {
 
-    private static float _happiness = 0;
-    private static float _energy = 0;
-    private static float _maxEnergy = 0;
-    private static float _motivation = 0;
-    private static float _maxMotivation = 0;
-    private static float _time = 0;
-    private static float _maxTime = 0;
+    private static float _happiness = 50;
+    private static float _energy = 50;
+    private static float _maxEnergy = 100;
+    private static float _motivation = 50;
+    private static float _maxMotivation = 100;
+    private static float _time = 24;
+    private static float _maxTime = 24;
 
 
     public static float happiness

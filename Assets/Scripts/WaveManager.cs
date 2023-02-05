@@ -10,6 +10,7 @@ public class WaveManager : MonoBehaviour
     
     [SerializeField] private List<Neuron> _neurons;
     [SerializeField] private BadThought _thought;
+    [SerializeField] private float _timeBetweenLevels;
 
     [SerializeField] private float _thoughtRate = 1;
     private float _timeSinceThought = 0;
@@ -22,6 +23,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _startMaxTime = 100f;
 
     private EventSimulator _eventSimulator;
+    private float _lastLevelUp;
 
     private void SpawnThought()
     {
@@ -37,12 +39,17 @@ public class WaveManager : MonoBehaviour
         foreach (var neuron in _neurons)
         {
             neuron.AddLayer();
+            neuron.gameObject.tag = "Node";
+            neuron._first.gameObject.tag = "OuterNode";
+            neuron._second.gameObject.tag = "OuterNode";
 
             _newNeurons.Add(neuron._first);
             _newNeurons.Add(neuron._second);
+            Camera.main.orthographicSize += 0.8f;
         }
         _neurons.Clear();
         _neurons = _newNeurons;
+        _lastLevelUp = Time.time;
     }
     
     void Start()
@@ -50,6 +57,8 @@ public class WaveManager : MonoBehaviour
         _input.ClickEvent += HandleClick;
 
         _eventSimulator = new EventSimulator();
+
+        _lastLevelUp = Time.time - (_neurons.Count * _timeBetweenLevels);
 
         Stats.maxEnergy = _startMaxEnergy;
         Stats.maxMotivation = _startMaxMotivation;
@@ -62,6 +71,10 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
+        if(Time.time - _lastLevelUp >=  _neurons.Count * _timeBetweenLevels)
+        {
+            LevelUp();
+        }
         if (_timeSinceThought > _thoughtRate)
         {
             SpawnThought();
@@ -81,7 +94,7 @@ public class WaveManager : MonoBehaviour
 
     private void HandleClick()
     {
-        LevelUp();
-        SpawnThought();
+        //LevelUp();
+        //SpawnThought();
     }
 }

@@ -50,7 +50,8 @@ ExportedObj/
 *.opendb
 *.VC.db
 *.cs.swp
-*.cs.un~
+*.un~
+*.swo
 Assets/TextMesh Pro/
 
 # Unity3D generated meta files

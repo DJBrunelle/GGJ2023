@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Node
   layers:
   - Default
   - TransparentFX
@@ -38,6 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2821392611
+    locked: 0
+  - name: Tendrils
+    uniqueID: 3724284141
+    locked: 0
+  - name: Neurons
+    uniqueID: 2104804785
+    locked: 0
+  - name: BadThoughts
+    uniqueID: 2247438457
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
