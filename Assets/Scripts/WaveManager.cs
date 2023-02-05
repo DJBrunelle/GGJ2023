@@ -40,6 +40,7 @@ public class WaveManager : MonoBehaviour
 
             _newNeurons.Add(neuron._first);
             _newNeurons.Add(neuron._second);
+            Camera.main.orthographicSize += 0.8f;
         }
         _neurons.Clear();
         _neurons = _newNeurons;
