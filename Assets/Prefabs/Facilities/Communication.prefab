@@ -105,8 +105,8 @@ MonoBehaviour:
   personalTimeCost: 15
   baseHealth: 3
   levelHealthMultiplier: 1
-  generatesEnergy: 10
-  generatesMotivation: 30
+  generatesEnergy: 5
+  generatesMotivation: 10
   generatesTime: 0
   generatesHappiness: 20
   myCollider: {fileID: 4608243415826909288}

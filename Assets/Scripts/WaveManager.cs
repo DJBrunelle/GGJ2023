@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -38,7 +39,7 @@ public class WaveManager : MonoBehaviour
 
     private void LevelUp()
     {
-        _thoughtRate -= 2;
+        _thoughtRate *= 0.6f;
         Stats.time = 100;
         List<Neuron> _newNeurons = new List<Neuron>();
         foreach (var neuron in _neurons)
@@ -110,11 +111,30 @@ public class WaveManager : MonoBehaviour
 
             _eventText.text = ">" + gameEvent._eventText + "\n";
 
+            if (gameEvent._icon != null)
+            {
+                StartCoroutine(ShowIcon(Instantiate(gameEvent._icon)));
+            }
+
             _timeSinceEvent = 0;
         }
 
         _timeSinceThought += Time.deltaTime;
         _timeSinceEvent += Time.deltaTime;
+    }
+
+    private IEnumerator ShowIcon(GameObject icon)
+    {
+        float timeToShow = 5;
+        float timeShown = 0;
+
+        while (timeShown < timeToShow)
+        {
+            timeShown += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(icon);
     }
 
     private void HandleClick()
